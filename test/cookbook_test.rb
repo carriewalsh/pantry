@@ -18,4 +18,12 @@ class CookbookTest < MiniTest::Test
   def test_cookbook_exists
     assert_instance_of Cookbook, @cookbook
   end
+
+  def test_cook_book_starts_with_no_recipes_by_default
+    assert_equal [], @cookbook.recipes
+  end
+
+  def test_cookbook_can_have_recipes_added
+    assert_equal [@mac_and_cheese,@burger], @cookbook.recipes
+  end
 end
