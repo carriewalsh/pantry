@@ -29,6 +29,13 @@ class CookbookTest < MiniTest::Test
     assert_equal [@mac_and_cheese,@burger], @cookbook.recipes
   end
 
+  def test_cookbook_cannot_have_duplicate_recipes
+    @cookbook.add_recipe(@mac_and_cheese)
+    @cookbook.add_recipe(@burger)
+    @cookbook.add_recipe(@burger)
+    assert_equal [@mac_and_cheese,@burger], @cookbook.recipes
+  end
+
   def test_cookbook_can_print_summary_of_recipes
     @cookbook.add_recipe(@mac_and_cheese)
     @cookbook.add_recipe(@burger)
