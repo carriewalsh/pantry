@@ -37,6 +37,6 @@ class RecipeTest < MiniTest::Test
   def test_recipe_can_list_ingredients
     @mac_and_cheese.add_ingredient(@cheese,2)
     @mac_and_cheese.add_ingredient(@mac,8)
-    assert_equal expected, @mac_and_cheese.ingredients
+    assert_equal [@cheese,@mac], @mac_and_cheese.ingredients
   end
 end
