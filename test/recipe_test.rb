@@ -41,6 +41,8 @@ class RecipeTest < MiniTest::Test
   end
 
   def test_recipe_can_show_total_calories
+    @mac_and_cheese.add_ingredient(@cheese,2)
+    @mac_and_cheese.add_ingredient(@mac,8)
     assert_equal 440, @mac_and_cheese.total_calories
   end
 end
