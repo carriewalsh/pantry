@@ -8,3 +8,4 @@ require "pry"
 
 require "./lib/ingredient"
 require "./lib/recipe"
+require "./lib/pantry"
