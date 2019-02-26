@@ -45,4 +45,20 @@ class RecipeTest < MiniTest::Test
     @mac_and_cheese.add_ingredient(@mac,8)
     assert_equal 440, @mac_and_cheese.total_calories
   end
+
+  def test_recipe_can_print_ingredient_hash
+    expected = {ingredient:"Cheese",
+                amount: "2 C"}
+    assert_equal expected, @mac_and_cheese.ingredient_hash(@cheese)
+  end
+
+  def test_recipe_can_print_recipe_details
+    expected = {
+      ingredients: [{ingredient: "Macaroni",
+                      amount: "8 oz"},
+                      {ingredient: "Cheese",
+                      amount: "2 C"}],
+      total_calories: 440}}
+    assert_equal expected, @mac_and_cheese.details
+  end
 end

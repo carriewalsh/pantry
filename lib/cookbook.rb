@@ -7,4 +7,8 @@ class Cookbook
   def add_recipe(recipe)
     @recipes << recipe
   end
+
+  def details
+
+  end
 end
