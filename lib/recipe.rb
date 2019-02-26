@@ -24,4 +24,14 @@ class Recipe
       sum += ingredient.calories * amount
     end
   end
+
+  def ingredient_hash(ingredient)
+    unit = ingredient.unit
+    amount = @ingredients_required[ingredient]
+    {ingredient:"#{ingredient.name}",amount:"#{amount} #{unit}"}
+  end
+
+  def details
+
+  end
 end
