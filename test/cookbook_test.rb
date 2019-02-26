@@ -42,16 +42,21 @@ class CookbookTest < MiniTest::Test
     expected = [{
                 name:"Mac and Cheese",
                 details: {
-                  ingredients: [{ingredient: "Cheese",
+                  ingredients: [{
+                                ingredient: "Cheese",
                                 amount: "2 C"},
-                                {ingredient: "Macaroni",
+                                {
+                                ingredient: "Macaroni",
                                 amount: "8 oz"}],
                   total_calories: 440}},
-                {name: "Burger",
+                {
+                name: "Burger",
                 details:{
-                  ingredients: [{ingredient: "Ground Beef",
+                  ingredients: [{
+                                ingredient: "Ground Beef",
                                 amount: "4 oz"},
-                                {ingredient: "Bun",
+                                {
+                                ingredient: "Bun",
                                 amount: "100 g"}],
                   total_calories: 500}}]
     assert_equal expected, @cookbook.summary
