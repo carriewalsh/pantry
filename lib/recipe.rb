@@ -10,4 +10,8 @@ class Recipe
   def add_ingredient(ingredient,how_many)
     @ingredients_required[ingredient] = how_many
   end
+
+  def amount_required(ingredient)
+    @ingredients_required[ingredient]
+  end
 end
