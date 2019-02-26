@@ -28,11 +28,10 @@ class Recipe
   end
 
   def details
-    details_hash = {ingredients: [],total_calories: 0}
+    details_hash = {ingredients: [],total_calories: total_calories}
     @ingredients_required.each do |ingredient,amount|
       details_hash[:ingredients] << ingredient_hash(ingredient)
     end
-    details_hash[:total_calories] += total_calories
     details_hash
   end
 
