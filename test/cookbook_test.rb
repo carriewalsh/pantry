@@ -24,6 +24,8 @@ class CookbookTest < MiniTest::Test
   end
 
   def test_cookbook_can_have_recipes_added
+    @cookbook.add_recipe(@mac_and_cheese)
+    @cookbook.add_recipe(@burger)
     assert_equal [@mac_and_cheese,@burger], @cookbook.recipes
   end
 end
