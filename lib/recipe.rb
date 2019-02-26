@@ -39,4 +39,8 @@ class Recipe
     hash[:total_calories] += total_calories
     hash
   end
+
+  def summary
+    {name: "#{@name}", details: details}
+  end
 end

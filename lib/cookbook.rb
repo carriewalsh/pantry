@@ -9,7 +9,7 @@ class Cookbook
   end
 
   def summary
-    @recipes.map do |recipe|
-      
+    # @recipes.map do |recipe|
+
   end
 end
