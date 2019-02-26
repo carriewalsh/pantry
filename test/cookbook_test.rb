@@ -30,6 +30,8 @@ class CookbookTest < MiniTest::Test
   end
 
   def test_cookbook_can_print_summary_of_recipes
+    @cookbook.add_recipe(@mac_and_cheese)
+    @cookbook.add_recipe(@burger)
     expected = [{
                 name:"Mac and Cheese",
                 details: {
