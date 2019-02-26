@@ -29,22 +29,34 @@ class CookbookTest < MiniTest::Test
     assert_equal [@mac_and_cheese,@burger], @cookbook.recipes
   end
 
+  def test_cookbook_cannot_have_duplicate_recipes
+    @cookbook.add_recipe(@mac_and_cheese)
+    @cookbook.add_recipe(@burger)
+    @cookbook.add_recipe(@burger)
+    assert_equal [@mac_and_cheese,@burger], @cookbook.recipes
+  end
+
   def test_cookbook_can_print_summary_of_recipes
     @cookbook.add_recipe(@mac_and_cheese)
     @cookbook.add_recipe(@burger)
     expected = [{
                 name:"Mac and Cheese",
                 details: {
-                  ingredients: [{ingredient: "Cheese",
+                  ingredients: [{
+                                ingredient: "Cheese",
                                 amount: "2 C"},
-                                {ingredient: "Macaroni",
+                                {
+                                ingredient: "Macaroni",
                                 amount: "8 oz"}],
                   total_calories: 440}},
-                {name: "Burger",
+                {
+                name: "Burger",
                 details:{
-                  ingredients: [{ingredient: "Ground Beef",
+                  ingredients: [{
+                                ingredient: "Ground Beef",
                                 amount: "4 oz"},
-                                {ingredient: "Bun",
+                                {
+                                ingredient: "Bun",
                                 amount: "100 g"}],
                   total_calories: 500}}]
     assert_equal expected, @cookbook.summary

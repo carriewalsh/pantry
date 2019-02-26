@@ -36,5 +36,4 @@ class PantryTest < MiniTest::Test
     @pantry.restock(@mac,8)
     assert_equal true, @pantry.enough_ingredients_for?(@mac_and_cheese)
   end
-
 end

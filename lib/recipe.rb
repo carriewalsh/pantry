@@ -15,10 +15,6 @@ class Recipe
     @ingredients_required[ingredient]
   end
 
-  def ingredients
-    @ingredients_required.keys
-  end
-
   def total_calories
     @ingredients_required.inject(0) do |sum,(ingredient,amount)|
       sum += ingredient.calories * amount
@@ -32,12 +28,11 @@ class Recipe
   end
 
   def details
-    hash = {ingredients: [],total_calories: 0}
+    details_hash = {ingredients: [],total_calories: total_calories}
     @ingredients_required.each do |ingredient,amount|
-      hash[:ingredients] << ingredient_hash(ingredient)
+      details_hash[:ingredients] << ingredient_hash(ingredient)
     end
-    hash[:total_calories] += total_calories
-    hash
+    details_hash
   end
 
   def summary
