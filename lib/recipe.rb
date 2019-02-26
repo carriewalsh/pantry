@@ -24,4 +24,23 @@ class Recipe
       sum += ingredient.calories * amount
     end
   end
+
+  def ingredient_hash(ingredient)
+    unit = ingredient.unit
+    amount = @ingredients_required[ingredient]
+    {ingredient:"#{ingredient.name}",amount:"#{amount} #{unit}"}
+  end
+
+  def details
+    hash = {ingredients: [],total_calories: 0}
+    @ingredients_required.each do |ingredient,amount|
+      hash[:ingredients] << ingredient_hash(ingredient)
+    end
+    hash[:total_calories] += total_calories
+    hash
+  end
+
+  def summary
+    {name: "#{@name}", details: details}
+  end
 end
